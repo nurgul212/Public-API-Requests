@@ -18,3 +18,4 @@ In this project, I built an app for a fictional company called Awesome Startup, 
 - Functionality has been added to switch back and forth between employees when the the detail model window is open.
 - No errors in the console when the end or beginning of the list is reached.
 - Background color has been changed
+
