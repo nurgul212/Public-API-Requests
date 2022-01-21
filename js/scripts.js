@@ -13,19 +13,21 @@ const search = `
     </form>
     `;
 searchContainer.insertAdjacentHTML('beforeend', search);
- document.getElementById('search-input').focus();
-
-
-// Gallery markup---------------------------------------------------------------
-const gallery = document.getElementById('gallery');
-const urlAPI = "https://randomuser.me/api/?nat=us&results=12";
+ 
+//  document.getElementById('search-input').focus();
 
 // fetch data from API
+const urlAPI = `https://randomuser.me/api/?results=12&inc=name, picture, email, location, phone, dob &noinfo &nat=US`;
 fetch(urlAPI)
     .then(res => res.json())
     .then(res => res.results)
     .then(displayEmployees)
     .catch(err => console.log(err))
+
+
+
+// Gallery ---------------------------------------------------------------
+const gallery = document.getElementById('gallery');
 
 // displayEmployees function
 function displayEmployees(employeeData) {
@@ -41,12 +43,11 @@ function displayEmployees(employeeData) {
         let name = employee.name;
         let email = employee.email;
         let city = employee.location.city;
-        let state = employee.location.state;
-       
+        let state = employee.location.state;  
 
-     employeeHTML = `
-        <div class="card" data-index="${index}">
-            <div class="card-img-container">
+     employeeHTML += `
+        <div class="card">
+            <div class="card-img-container" data-index="${index}">
                 <img class="card-img" src="${picture.large}" alt="profile picture">
             </div>
             <div class="card-info-container">
@@ -56,6 +57,6 @@ function displayEmployees(employeeData) {
             </div>
         </div>
     `});
-    gallery.insertAdjacentHTML('beforeend', employeeHTML);
+    gallery.innerHTML= employeeHTML;
 };
 
