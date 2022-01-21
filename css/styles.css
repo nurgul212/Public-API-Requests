@@ -17,7 +17,7 @@ html, body {
 body {
     font-family: "Nunito", sans-serif;
     text-align: center;
-    background: #bbbab3;
+    background: #17423c;
     /* background: linear-gradient(-35deg,  #729336,  #6a8687, #d9917b,#91ddcb); */
 }
 
@@ -32,12 +32,8 @@ header {
 
 header h1 {
     font-size: 30px;
-    /* color: rgba(50, 50, 50, 0.9); */
-    margin-top: 35px;
-    background: linear-gradient(#9b4444, #3206a7);
-   -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent;  
-   text-shadow: 5px 5px 10px rgb(143, 141, 140);
+    color: rgba(231, 233, 249);
+    margin-top: 35px;  
 }
 
 /* .teamImage{
@@ -101,6 +97,7 @@ header h1 {
     border: 1px solid rgba(50, 50, 50, 0.3);
     transition: .4s ease-out;
     overflow: hidden;
+    box-shadow: 10px 10px #a2e9ee;
 }
 
 .card-img {
@@ -117,15 +114,27 @@ header h1 {
     margin: 20px auto 0;
 }
 
+.card-email {
+    font-size: 0.9em;
+    /* color: rgba(50, 50, 50, 0.7); */
+    margin: 7px auto;
+    transition: .4s ease-out;
+    color: #006cb4;
+}
 .card-text {
     font-size: 0.9em;
     color: rgba(50, 50, 50, 0.7);
     margin: 7px auto;
     transition: .4s ease-out;
+    /* color: #006cb4; */
 }
+
 
 .cap {
     text-transform: capitalize;
+}
+.email{
+    color: #006cb4;
 }
 
 
