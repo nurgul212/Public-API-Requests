@@ -92,14 +92,21 @@ header h1 {
     max-width: 360px;
     margin: 10px 10px 20px;
     padding: 10px;
-    background: rgba(245, 245, 245, 0.9);
+    background: white;
     border-radius: 0.25em;
     border: 1px solid rgba(50, 50, 50, 0.3);
-    transition: .4s ease-out;
+    /* transition: .4s ease-out; */
     overflow: hidden;
     box-shadow: 10px 10px #234244;
+    transition: all 0.5s;
 }
 
+.card:hover{
+    background: rgb(187, 60, 60);
+    box-shadow: -8px -8px orange;
+    /* border: 0.3rem solid orange; */
+    transform: scale(1.1);
+}
 .card-img {
     width: 95px;
     margin: 10px 15px auto 10px;

@@ -60,3 +60,39 @@ function displayEmployees(employeeData) {
     gallery.innerHTML= employeeHTML;
 };
 
+// displayModel function
+const overlay = document.querySelector(".model-container");
+const modalContainer = document.querySelector(".modal-info-container");
+const modalClose = document.querySelector(".modal-close");
+
+let employees = [];
+function displayModal(index){
+    // console.log(index);
+    const modalHTML = `
+    <div class="modal-container">
+        <div class="modal">
+            <button type="button" id="modal-close-btn" class="modal-close-btn"><strong>X</strong></button>
+            <div class="modal-info-container">
+                <img class="modal-img" src="${picture.large}" alt="profile picture">
+                <h3 id="name" class="modal-name cap">${name.first} ${name.last}</h3>
+                <p class="modal-text">${email}</p>
+                <p class="modal-text cap">${city}</p>
+                <hr>
+                <p class="modal-text">${phone}</p>
+                <p class="modal-text">${street.number} ${street.name}, ${state} ${postcode}</p>
+                <p class="modal-text">Birthday:
+                ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
+            </div>
+        </div>
+
+        <div class="modal-btn-container">
+            <button type="button" id="modal-prev" class="modal-prev btn">Prev</button>
+            <button type="button" id="modal-next" class="modal-next btn">Next</button>
+        </div>
+  </div>
+    `;
+    overlay.classList.remove("hidden");
+    modalContainer.innerHTML = modalHTML;
+    indexOfModal = index;
+}
+
