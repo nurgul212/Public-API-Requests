@@ -4,6 +4,17 @@
 // =========================================
 
 
+// ------------------------------------------------------------------------
+// Fetch Function
+// ------------------------------------------------------------------------
+const urlAPI = `https://randomuser.me/api/?results=12&inc=name, picture, email, location, phone, dob &noinfo &nat=US`;
+fetch(urlAPI)
+    .then(res => res.json())
+    .then(res => res.results)
+    .then(displayEmployees)
+    .catch(err => console.log(err))
+
+
 // Search container------------------------------------------------------------
 const searchContainer = document.querySelector('.search-container');
 const searchHTML = `
@@ -15,12 +26,13 @@ const searchHTML = `
 searchContainer.insertAdjacentHTML('beforeend', searchHTML);
  
 //  document.getElementById('search-input').focus();
-
+const errorMessage = document.querySelector('.errorMessage');
+// console.log(errorMessage)
 
  //  searchFilter Function for Employees can be filtered by name
-
+ 
  function searchFilter(e) {
-    let searchName = e.target.value.toLowerCase();
+    let searchName = e.target.value.toLowerCase();   
     let employeeNames = document.querySelectorAll(".card-name");
 
     employeeNames.forEach(employeeName => {
@@ -31,25 +43,13 @@ searchContainer.insertAdjacentHTML('beforeend', searchHTML);
         nameOfEmployee.style.display = "";
       } else {
         nameOfEmployee.style.display = "none";
+       errorMessage.classList.remove('hidden');
       }
     });
 }
 
 const search = document.getElementById("search-input");
 search.addEventListener('input', searchFilter);
-
-
-
-
-// ------------------------------------------------------------------------
-// Fetch Function
-// ------------------------------------------------------------------------
-const urlAPI = `https://randomuser.me/api/?results=12&inc=name, picture, email, location, phone, dob &noinfo &nat=US`;
-fetch(urlAPI)
-    .then(res => res.json())
-    .then(res => res.results)
-    .then(displayEmployees)
-    .catch(err => console.log(err))
 
 
 // ------------------------------------------------------------------------
@@ -90,12 +90,14 @@ function displayEmployees(employeeData) {
 };
 
 // displayModel function
-const overlay = document.querySelector(".model-container");
-const modalContainer = document.querySelector(".modal-info-container");
+const modalContainer = document.querySelector(".modal-container");
+const modalInfoContainer = document.querySelector(".modal-info-container");
 const modalClose = document.querySelector(".modal-close");
 
-let employees = [];
+
+
 function displayModal(index){
+
     // console.log(index);
     const modalHTML = `
     <div class="modal-container">
@@ -120,8 +122,8 @@ function displayModal(index){
         </div>
   </div>
     `;
-    overlay.classList.remove("hidden");
-    modalContainer.innerHTML = modalHTML;
+    modalContainer.classList.remove("hidden");
+    modalInfoContainer.innerHTML = modalHTML;
     indexOfModal = index;
 }
 
