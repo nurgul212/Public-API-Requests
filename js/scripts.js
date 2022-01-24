@@ -6,17 +6,44 @@
 
 // Search container------------------------------------------------------------
 const searchContainer = document.querySelector('.search-container');
-const search = `
+const searchHTML = `
     <form action="#" method="get">
         <input type="search" id="search-input" class="search-input" placeholder="Search...">
         <input type="submit" value="&#x1F50D;" id="search-submit" class="search-submit">
     </form>
     `;
-searchContainer.insertAdjacentHTML('beforeend', search);
+searchContainer.insertAdjacentHTML('beforeend', searchHTML);
  
 //  document.getElementById('search-input').focus();
 
-// fetch data from API
+
+ //  searchFilter Function for Employees can be filtered by name
+
+ function searchFilter(e) {
+    let searchName = e.target.value.toLowerCase();
+    let employeeNames = document.querySelectorAll(".card-name");
+
+    employeeNames.forEach(employeeName => {
+         let name =employeeName.textContent.toLowerCase();
+         let nameOfEmployee = employeeName.parentElement.parentElement;
+
+      if(name.includes(searchName)){
+        nameOfEmployee.style.display = "";
+      } else {
+        nameOfEmployee.style.display = "none";
+      }
+    });
+}
+
+const search = document.getElementById("search-input");
+search.addEventListener('input', searchFilter);
+
+
+
+
+// ------------------------------------------------------------------------
+// Fetch Function
+// ------------------------------------------------------------------------
 const urlAPI = `https://randomuser.me/api/?results=12&inc=name, picture, email, location, phone, dob &noinfo &nat=US`;
 fetch(urlAPI)
     .then(res => res.json())
@@ -25,8 +52,10 @@ fetch(urlAPI)
     .catch(err => console.log(err))
 
 
-
-// Gallery ---------------------------------------------------------------
+// ------------------------------------------------------------------------
+//   displayEmployees function
+// ------------------------------------------------------------------------
+// Gallery 
 const gallery = document.getElementById('gallery');
 
 // displayEmployees function
