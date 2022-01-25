@@ -12,6 +12,7 @@ fetch(urlAPI)
     .then(res => res.json())
     .then(res => res.results)
     .then(displayEmployees)
+    // .then(searchFilter)
     .catch(err => console.log(err))
 
 
@@ -26,25 +27,29 @@ const searchHTML = `
 searchContainer.insertAdjacentHTML('beforeend', searchHTML);
  
 //  document.getElementById('search-input').focus();
-const errorMessage = document.querySelector('.errorMessage');
-// console.log(errorMessage)
+
+// const errorMessage = document.querySelector('.errorMessage');
+
 
  //  searchFilter Function for Employees can be filtered by name
  
  function searchFilter(e) {
     let searchName = e.target.value.toLowerCase();   
     let employeeNames = document.querySelectorAll(".card-name");
+    // console.log(employeeNames.length)
 
     employeeNames.forEach(employeeName => {
          let name =employeeName.textContent.toLowerCase();
          let nameOfEmployee = employeeName.parentElement.parentElement;
-
+        
       if(name.includes(searchName)){
         nameOfEmployee.style.display = "";
+       
       } else {
+        
         nameOfEmployee.style.display = "none";
-       errorMessage.classList.remove('hidden');
       }
+      
     });
 }
 
@@ -96,34 +101,34 @@ const modalClose = document.querySelector(".modal-close");
 
 
 
-function displayModal(index){
+// function displayModal(index){
 
-    // console.log(index);
-    const modalHTML = `
-    <div class="modal-container">
-        <div class="modal">
-            <button type="button" id="modal-close-btn" class="modal-close-btn"><strong>X</strong></button>
-            <div class="modal-info-container">
-                <img class="modal-img" src="${picture.large}" alt="profile picture">
-                <h3 id="name" class="modal-name cap">${name.first} ${name.last}</h3>
-                <p class="modal-text">${email}</p>
-                <p class="modal-text cap">${city}</p>
-                <hr>
-                <p class="modal-text">${phone}</p>
-                <p class="modal-text">${street.number} ${street.name}, ${state} ${postcode}</p>
-                <p class="modal-text">Birthday:
-                ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
-            </div>
-        </div>
+//     // console.log(index);
+//     const modalHTML = `
+//     <div class="modal-container">
+//         <div class="modal">
+//             <button type="button" id="modal-close-btn" class="modal-close-btn"><strong>X</strong></button>
+//             <div class="modal-info-container">
+//                 <img class="modal-img" src="${picture.large}" alt="profile picture">
+//                 <h3 id="name" class="modal-name cap">${name.first} ${name.last}</h3>
+//                 <p class="modal-text">${email}</p>
+//                 <p class="modal-text cap">${city}</p>
+//                 <hr>
+//                 <p class="modal-text">${phone}</p>
+//                 <p class="modal-text">${street.number} ${street.name}, ${state} ${postcode}</p>
+//                 <p class="modal-text">Birthday:
+//                 ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
+//             </div>
+//         </div>
 
-        <div class="modal-btn-container">
-            <button type="button" id="modal-prev" class="modal-prev btn">Prev</button>
-            <button type="button" id="modal-next" class="modal-next btn">Next</button>
-        </div>
-  </div>
-    `;
-    modalContainer.classList.remove("hidden");
-    modalInfoContainer.innerHTML = modalHTML;
-    indexOfModal = index;
-}
+//         <div class="modal-btn-container">
+//             <button type="button" id="modal-prev" class="modal-prev btn">Prev</button>
+//             <button type="button" id="modal-next" class="modal-next btn">Next</button>
+//         </div>
+//   </div>
+//     `;
+//     modalContainer.classList.remove("hidden");
+//     modalInfoContainer.innerHTML = modalHTML;
+//     indexOfModal = index;
+// }
 
