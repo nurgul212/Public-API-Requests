@@ -40,28 +40,6 @@ function checkStatus(response){
  searchContainer.insertAdjacentHTML('beforeend', searchHTML);
  
  
- 
- // searchFilter function===================================================================== 
- function searchFilter(e) {
-     let searchName = e.target.value.toLowerCase();   
-     let employeeNames = document.querySelectorAll(".card-name");
-     // console.log(employeeNames.length)
- 
-     employeeNames.forEach(employeeName => {
-          let name =employeeName.textContent.toLowerCase();
-          let nameOfEmployee = employeeName.parentElement.parentElement;
-         
-       if(name.includes(searchName)){
-         nameOfEmployee.style.display = "";
-        
-       } else {
-         
-         nameOfEmployee.style.display = "none";
-       }
-       
-     });
- }
- 
  const search = document.getElementById("search-input");
  search.addEventListener('input', searchFilter);
 
@@ -153,7 +131,7 @@ function displayModal(employeeData, index){
     `;
     modalContainer.innerHTML = modalHTML;
 
-   // modalClose click event : add the hidden class to the modalContainer 
+   // modalClose click event : close the modal container upon a click
     const modalCloseBtn = document.querySelector(".modal-close-btn");
     modalCloseBtn.addEventListener('click', () => {
         modalContainer.remove();
@@ -190,7 +168,28 @@ function displayModal(employeeData, index){
 
 }
 
+ 
+// A search feature has been added so that students can be filtered by name
+//  searchFilter function=====================================================================
+function searchFilter(e) {
+    let searchName = e.target.value.toLowerCase();   
+    let employeeNames = document.querySelectorAll(".card-name");
+    // console.log(employeeNames.length)
 
+    employeeNames.forEach(employeeName => {
+         let name =employeeName.textContent.toLowerCase();
+         let nameOfEmployee = employeeName.parentElement.parentElement;
+        
+      if(name.includes(searchName)){
+        nameOfEmployee.style.display = "";
+       
+      } else {
+        
+        nameOfEmployee.style.display = "none";
+      }
+      
+    });
+}
   
 
 
