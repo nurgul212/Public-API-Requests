@@ -16,5 +16,5 @@ https://nurgul212.github.io/Public-API-Requests/
 - A search feature has been added so that students can be filtered by name
 - Functionality has been added to switch back and forth between employees when the the detail model window is open.
 - No errors in the console when the end or beginning of the list is reached.
-- Background color has been changed
+- App styles have been personalized by changing the background color, and styling the text.
 
