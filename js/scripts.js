@@ -140,6 +140,7 @@ function displayModal(employeeData, index){
 
     const modalNext = document.getElementById("modal-next");
     const modalPrev = document.getElementById("modal-prev");
+    
  // the following eventListener is to switch back and forth between employees when the detail modal window is open
 
 
