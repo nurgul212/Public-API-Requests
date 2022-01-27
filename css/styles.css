@@ -32,10 +32,10 @@ header {
 
 header h1 {
     font-size: 30px;
-    color: rgba(209, 101, 69);
+    color: black;
     margin-top: 35px;  
     /* text-decoration: underline orange; */
-    background-color: #e8ebd4;
+    background-color: #e7efee;
     padding: 8px;
     border-radius: 10px;;
 }
@@ -100,9 +100,7 @@ header h1 {
     box-shadow: 10px 10px #234244;
     transition: all 0.5s;
 }
-.hidden {
-    display: none;
-}
+
 .errorMessage{
     padding-top: 20px;
     color: rgb(189, 9, 50);
