@@ -1,7 +1,7 @@
 ### FSJS Project 5 - Public API Requests
 In this project, I built an app for a fictional company called Awesome Startup, a distributed company with remote employees working all over the world. They need a smart way for employees to share contact information with each other.
 
-- I used JavaScript to create an employee directory by communicationg with a third-party API (Application Programming Interdace).
+- I used JavaScript to create an employee directory by communicationg with a third-party API (Application Programming Interface).
 
 ### Click the following link to view the app:
 https://nurgul212.github.io/Public-API-Requests/
