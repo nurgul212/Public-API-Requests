@@ -5,6 +5,8 @@ In this project, I built an app for a fictional company called Awesome Startup, 
 
 ### Click the following link to view the app:
 https://nurgul212.github.io/Public-API-Requests/
+## Project Output Snapshot
+![public API](https://github.com/nurgul212/learning-git/assets/90399606/0cc2dffb-1c46-4bee-a3bc-b94c303beaad)
 
 ### Languages & Techniques Used: 
 - HTML (provide)
